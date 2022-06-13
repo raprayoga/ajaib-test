@@ -19,7 +19,6 @@ export default function Main() {
   });
 
   const getEmployees = async (data) => {
-    console.log(data)
     const queryKeyword = data.keyword ? `&keyword=${data.keyword}` : ""
     const queryGender = data.gender !== "all" ? `&gender=${data.gender}` : ""
     try {
@@ -27,7 +26,6 @@ export default function Main() {
       await get(`${USERAPI}?${include}&results=${data.results}&page=${data.page}${queryKeyword}${queryGender}`)
         .then((resp) => {
           setData(resp.data.results);
-          console.log(resp.data.results)
         })
         .catch((error) => {
           window.$toast.fire({
