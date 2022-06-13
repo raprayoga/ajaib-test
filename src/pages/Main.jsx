@@ -1,4 +1,4 @@
-import React,{ useState, useEffect } from 'react'
+import React,{ useState, useEffect } from "react"
 import get from 'services/xhr'
 import { USERAPI } from 'constant/url'
 
@@ -20,8 +20,8 @@ export default function Main() {
 
   const getEmployees = async (data) => {
     console.log(data)
-    const queryKeyword = data.keyword ? `&keyword=${data.keyword}` : ''
-    const queryGender = data.gender !== 'all' ? `&gender=${data.gender}` : ''
+    const queryKeyword = data.keyword ? `&keyword=${data.keyword}` : ""
+    const queryGender = data.gender !== "all" ? `&gender=${data.gender}` : ""
     try {
       setIsLoading(true);
       await get(`${USERAPI}?${include}&results=${data.results}&page=${data.page}${queryKeyword}${queryGender}`)
@@ -90,7 +90,7 @@ export default function Main() {
         onSearch={() => getEmployees(filter)}/>
 
       { isLoading ? (
-        <Box display='flex' mt={5} style={{justifyContent: "center", alignItems: "center"}}>
+        <Box display="flex" mt={5} style={{justifyContent: "center", alignItems: "center"}}>
           <CircularProgress />
         </Box>
       ) : (

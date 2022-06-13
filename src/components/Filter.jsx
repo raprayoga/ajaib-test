@@ -15,7 +15,7 @@ import {
   IconButton,
   InputAdornment,
 } from "@mui/material";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 
 export default function Filter(props) {
   const handleChange = (e) => {
